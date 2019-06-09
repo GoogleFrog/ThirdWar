@@ -1,0 +1,40 @@
+BZFlag:
+marker_place.wav
+message_private.wav
+message_team.wav
+
+Open Quarz:
+krog_stomp.wav
+
+Open LieroX:
+something.wav
+something2.wav
+
+Nanoblobs:
+beep4.wav
+beep6.wav
+
+nexuiz:
+talk.wav
+sparks.wav
+
+Xonotic:
+entire announcer folder contents
+
+Kmar:
+entire announcer/kmar folder contents
+
+Sunniterri:
+All zombie sounds (derived from http://www.freesound.org/people/sunnyterri/sounds/168204/)
+
+Klangfabrik:
+Sonic blaster shot sound (http://www.freesound.org/people/klangfabrik/sounds/232936/, sonic_blaster.wav)
+
+Unfa:
+Sonic blaster impact sound (unfa_blast_2)
+
+ikinz:
+place_beep.wav
+
+Audionautics:
+Claw missile launch sound (derived from https://www.freesound.org/people/Audionautics/sounds/171655/)

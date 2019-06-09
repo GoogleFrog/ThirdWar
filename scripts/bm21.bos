@@ -1,0 +1,471 @@
+//linear constant 163840
+
+#define TA			// This is a TA script
+
+//#include "constants.h"
+
+#define SFXTYPE_VTOL			0
+//#define SFXTYPE_THRUST			1
+#define	SFXTYPE_WAKE1			2
+#define	SFXTYPE_WAKE2			3
+#define	SFXTYPE_REVERSEWAKE1	4
+#define	SFXTYPE_REVERSEWAKE2	5
+
+//#define SFXTYPE_POINTBASED		256
+#define SFXTYPE_WHITESMOKE		256|1
+#define SFXTYPE_BLACKSMOKE		256|2
+#define SFXTYPE_SUBBUBBLES		256|3
+
+#define SHATTER			1		// The piece will shatter instead of remaining whole
+#define EXPLODE_ON_HIT		2		// The piece will explode when it hits the ground
+#define FALL			4		// The piece will fall due to gravity instead of just flying off
+#define SMOKE			8		// A smoke trail will follow the piece through the air
+#define FIRE			16		// A fire trail will follow the piece through the air
+#define BITMAPONLY		32		// The piece will not fly off or shatter or anything.  Only a bitmap explosion will be rendered.
+#define NOCEGTRAIL		64		// Disables the cegtrail for the specific piece (defined in the unit fbi)
+#define BITMAP			10000001
+
+// Bitmap Explosion Types
+#define BITMAP1			256
+#define BITMAP2			512
+#define BITMAP3			1024
+#define BITMAP4			2048
+#define BITMAP5			4096
+#define BITMAPNUKE		8192
+#define BITMAPMASK		16128	// Mask of the possible bitmap bits
+
+// Explosion generators
+#define UNIT_SFX1				1024
+#define UNIT_SFX2				1025
+#define UNIT_SFX3				1026
+#define UNIT_SFX4				1027
+#define UNIT_SFX5				1028
+#define UNIT_SFX6				1029
+#define UNIT_SFX7				1030
+#define UNIT_SFX8				1031
+
+// Weapons
+#define FIRE_W1					2048
+#define FIRE_W2					2049
+#define FIRE_W3					2050
+#define FIRE_W4					2051
+#define FIRE_W5					2052
+#define FIRE_W6					2053
+#define FIRE_W7					2054
+#define FIRE_W8					2055
+
+#define DETO_W1					4096
+#define DETO_W2					4097
+#define DETO_W3					4098
+#define DETO_W4					4099
+#define DETO_W5					4100
+#define DETO_W6					4101
+#define DETO_W7					4102
+#define DETO_W8					4103
+
+
+// COB constants
+#define ACTIVATION           1  // set or get
+#define STANDINGMOVEORDERS   2  // set or get
+#define STANDINGFIREORDERS   3  // set or get
+#define HEALTH               4  // get (0-100%)
+#define INBUILDSTANCE        5  // set or get
+#define BUSY                 6  // set or get (used by misc. special case missions like transport ships)
+#define PIECE_XZ             7  // get
+#define PIECE_Y              8  // get
+#define UNIT_XZ              9  // get
+#define UNIT_Y              10  // get
+#define UNIT_HEIGHT         11  // get
+#define XZ_ATAN             12  // get atan of packed x,z coords
+#define XZ_HYPOT            13  // get hypot of packed x,z coords
+#define ATAN                14  // get ordinary two-parameter atan
+#define HYPOT               15  // get ordinary two-parameter hypot
+#define GROUND_HEIGHT       16  // get land height, 0 if below water
+#define BUILD_PERCENT_LEFT  17  // get 0 = unit is built and ready, 1-100 = How much is left to build
+#define YARD_OPEN           18  // set or get (change which plots we occupy when building opens and closes)
+#define BUGGER_OFF          19  // set or get (ask other units to clear the area)
+#define ARMORED             20  // set or get
+
+#define WEAPON_AIM_ABORTED  21
+#define WEAPON_READY        22
+#define WEAPON_LAUNCH_NOW   23
+#define FINISHED_DYING      26
+#define ORIENTATION         27
+#define IN_WATER            28
+#define CURRENT_SPEED       29
+//#define MAGIC_DEATH         31
+#define VETERAN_LEVEL       32
+#define ON_ROAD             34
+
+#define MAX_ID                    70
+#define MY_ID                     71
+#define UNIT_TEAM                 72
+#define UNIT_BUILD_PERCENT_LEFT   73
+#define UNIT_ALLIED               74
+#define MAX_SPEED                 75
+#define CLOAKED                   76
+#define WANT_CLOAK                77
+#define GROUND_WATER_HEIGHT       78 // get land height, negative if below water
+#define UPRIGHT                   79 // set or get
+#define	POW                       80 // get
+#define PRINT                     81 // get, so multiple args can be passed
+#define HEADING                   82 // get
+#define TARGET_ID                 83 // get
+#define LAST_ATTACKER_ID          84 // get
+#define LOS_RADIUS                85 // set or get
+#define AIR_LOS_RADIUS            86 // set or get
+#define RADAR_RADIUS              87 // set or get
+#define JAMMER_RADIUS             88 // set or get
+#define SONAR_RADIUS              89 // set or get
+#define SONAR_JAM_RADIUS          90 // set or get
+#define SEISMIC_RADIUS            91 // set or get
+#define DO_SEISMIC_PING           92 // get
+#define CURRENT_FUEL              93 // set or get
+#define TRANSPORT_ID              94 // get
+#define SHIELD_POWER              95 // set or get
+#define STEALTH                   96 // set or get
+#define CRASHING                  97 // set or get, returns whether aircraft isCrashing state
+#define CHANGE_TARGET             98 // set, the value it's set to determines the affected weapon
+#define CEG_DAMAGE                99 // set
+#define COB_ID                   100 // get
+#define PLAY_SOUND               101 // get, so multiple args can be passed
+#define KILL_UNIT                102 // get KILL_UNIT(unitId, SelfDestruct=true, Reclaimed=false)
+#define ALPHA_THRESHOLD          103 // set or get
+#define SET_WEAPON_UNIT_TARGET   106 // get (fake set)
+#define SET_WEAPON_GROUND_TARGET 107 // get (fake set)
+
+// Indices for SET, GET, and GET_UNIT_VALUE for LUA return values
+#define LUA0			110	// (LUA0 returns the lua call status, 0 or 1)
+#define LUA1			111
+#define LUA2			112
+#define LUA3			113
+#define LUA4			114
+#define LUA5			115
+#define LUA6			116
+#define LUA7			117
+#define LUA8			118
+#define LUA9			119
+
+#define FLANK_B_MODE             120 // set or get
+#define FLANK_B_DIR              121 // set or get, set is through get for multiple args
+#define FLANK_B_MOBILITY_ADD     122 // set or get
+#define FLANK_B_MAX_DAMAGE       123 // set or get
+#define FLANK_B_MIN_DAMAGE       124 // set or get
+#define WEAPON_RELOADSTATE       125 // get (with fake set)
+#define WEAPON_RELOADTIME        126 // get (with fake set)
+#define WEAPON_ACCURACY          127 // get (with fake set)
+#define WEAPON_SPRAY             128 // get (with fake set)
+#define WEAPON_RANGE             129 // get (with fake set)
+#define WEAPON_PROJECTILE_SPEED  130 // get (with fake set)
+
+
+
+
+
+piece  	main, turret, outer, inner, sleeve, barrel, flare, smoke, breech, wheelfront_left, wheelfront_right, wheelmid_left, wheelmid_right, wheelrear_left, wheelrear_right, bumper, axle_front, axle_mid, axle_rear, frontlight, midbar, mirror_left, mirror_right, sparetire, thingy1, thingy2, thingy3, thingy4, thingy5, thingy6, thingy7, thingy8, thingy9, thingy10, thingy11, thingy12;
+
+static-var  isMoving, gun_1_yaw, traj, tracks;
+
+#define RESTORE_DELAY		3000
+#define TRACK_PERIOD			50
+
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_PUSH_Z			4		//Signal to prevent multiple pushing. REPLACE!
+#define SIG_TILT_Z			8
+#define SIG_MOVE			16		//Signal to prevent multiple track motion
+
+#define TURRET_SPEED			<35>
+#define TURRET_SPEED_2			<70>
+
+#define BARREL_DISTANCE			[-4]
+#define BREECH_DISTANCE			[-2]
+#define BARREL_SPEED			[1]
+#define BREECH_SPEED			[0.5]
+
+#define WHEEL_SPIN_SPEED_L		<360>
+#define WHEEL_SPIN_ACCEL_L		<10>
+#define WHEEL_SPIN_DECEL_L		<30>
+#define WHEEL_SPIN_SPEED_S		<540>
+#define WHEEL_SPIN_ACCEL_S		<15>
+#define WHEEL_SPIN_DECEL_S		<45>
+
+//tiltz
+#define TILT_PIECE				main	//piece to tilt. REPLACE!
+#define TILT_Z_ANGLE			<-10>	//How much to tilt at maximum
+#define TILT_Z_DIST				[18]		//Typically half the width of the unit. Keeps the unit's edges from sinking into the ground.
+#define TILT_Z_SPEED			5		//Number of half-cycles per second around z-axis
+
+//pushz
+#define PUSH_PIECE				main	//piece to push. REPLACE!
+#define PUSH_Z_DIST				[-4]	
+#define PUSH_Z_SPEED			[20]
+#define PUSH_Z_RESTORE			[1]
+
+#include "pushz.h"
+
+#include "tiltz.h"
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from main;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(Func_Var_1, Func_Var_2)
+{
+	turn main to z-axis Func_Var_2 speed <105.016484>;
+	turn main to x-axis Func_Var_1 speed <105.016484>;
+	wait-for-turn main around z-axis;
+	wait-for-turn main around x-axis;
+	turn main to z-axis <0.000000> speed <30.005495>;
+	turn main to x-axis <0.000000> speed <30.005495>;
+}
+
+TrackControl() {
+
+}
+
+RestoreAfterDelay()
+{
+	sleep RESTORE_DELAY;
+	turn turret to y-axis <0.000000> speed TURRET_SPEED;
+	turn outer to x-axis 0 speed TURRET_SPEED;
+	turn inner to x-axis 0 speed TURRET_SPEED_2;
+	turn sleeve to x-axis 0 speed TURRET_SPEED_2;
+}
+
+StartMoving() {
+	isMoving = 1;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script RestoreAfterDelay();
+	//start-script TrackControl();
+		spin wheelfront_left around x-axis speed <480> accelerate <120>;
+		spin wheelfront_right around x-axis speed <480> accelerate <120>;
+		spin wheelmid_left around x-axis speed <480> accelerate <120>;
+		spin wheelmid_right around x-axis speed <480> accelerate <120>;
+		spin wheelrear_left around x-axis speed <480> accelerate <120>;
+		spin wheelrear_right around x-axis speed <480> accelerate <120>;	
+
+}
+
+StopMoving() {
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	isMoving = 0;
+		stop-spin wheelfront_left around x-axis decelerate <120>;
+		stop-spin wheelfront_right around x-axis decelerate <120>;
+		stop-spin wheelmid_left around x-axis decelerate <120>;
+		stop-spin wheelmid_right around x-axis decelerate <120>;
+		stop-spin wheelrear_left around x-axis decelerate <120>;
+		stop-spin wheelrear_right around x-axis decelerate <120>;
+}
+
+Create()
+{
+	hide flare;
+	hide thingy1;
+	hide thingy2;
+	hide thingy3;
+	hide thingy4;
+	hide thingy5;
+	hide thingy6;
+	hide thingy7;
+	hide thingy8;
+	hide thingy9;
+	hide thingy10;
+	hide thingy11;
+	hide thingy12;
+	isMoving = 0;
+	traj = 0;
+	tracks = 1;
+	start-script SmokeUnit();
+}
+
+
+
+
+AimPrimary(heading, pitch)
+{
+	if (isMoving == 1) return (0);
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed TURRET_SPEED;
+	turn outer to x-axis 0 - pitch speed TURRET_SPEED;
+	turn inner to x-axis 2 * pitch speed TURRET_SPEED_2;
+	turn sleeve to x-axis 0 - (2 * pitch) speed TURRET_SPEED_2;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;	
+	gun_1_yaw = heading;
+	return (1);
+}
+
+
+AimSecondary(heading, pitch)
+{
+	if (isMoving == 1) return (0);
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed TURRET_SPEED;
+	turn outer to x-axis 0 - pitch speed TURRET_SPEED;
+	turn inner to x-axis 2 * pitch speed TURRET_SPEED_2;
+	turn sleeve to x-axis 0 - (2 * pitch) speed TURRET_SPEED_2;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	start-script RestoreAfterDelay();
+	gun_1_yaw = heading;
+	return (1);
+}
+
+Shot1()
+{
+
+	show flare;
+	hide flare;
+//	move barrel to z-axis BARREL_DISTANCE now;
+//	move breech to z-axis BREECH_DISTANCE now;
+//	move barrel to z-axis 0 speed BARREL_SPEED;
+//	move breech to z-axis 0 speed BREECH_SPEED;
+	
+	
+	emit-sfx 1025 from breech;
+}
+
+Shot2()
+{
+
+	show flare;
+	hide flare;
+
+	emit-sfx 1025 from breech;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = barrel;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = barrel;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = main;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	show thingy1;
+	show thingy2;
+	show thingy3;
+	show thingy4;
+	show thingy5;
+	show thingy6;
+	show thingy7;
+	show thingy8;
+	show thingy9;
+	show thingy10;
+	show thingy11;
+	show thingy12;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode barrel type BITMAPONLY | BITMAP1;
+		explode main type BITMAPONLY | BITMAP2;
+		explode breech type BITMAPONLY | BITMAP3;
+		explode sleeve type BITMAPONLY | BITMAP4;
+		explode turret type BITMAPONLY | BITMAP5;
+		return 1;
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode barrel type FALL | BITMAP1;
+		explode main type BITMAPONLY | BITMAP2;
+		explode breech type FALL | BITMAP3;
+		explode sleeve type FALL | BITMAP4;
+		explode turret type SHATTER | BITMAP5;
+		return 1;
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 2;
+		explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode main type BITMAPONLY | BITMAP2;
+		explode breech type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode turret type SHATTER | BITMAP5;
+		
+		explode thingy1 type FALL | BITMAP1;
+		explode thingy2 type FALL | BITMAP1;
+		explode thingy3 type FALL | BITMAP1;
+		explode thingy4 type FALL | BITMAP1;
+		explode thingy5 type FALL | BITMAP1;
+		explode thingy6 type FALL | BITMAP1;
+		explode thingy7 type FALL | BITMAP1;
+		explode thingy8 type FALL | BITMAP1;
+		explode thingy9 type FALL | BITMAP1;
+		explode thingy10 type FALL | BITMAP1;
+		explode thingy11 type FALL | BITMAP1;
+		explode thingy12 type FALL | BITMAP1;		
+		
+		return 1;
+	}
+	corpsetype = 2;
+	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode main type BITMAPONLY | BITMAP2;
+	explode breech type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	
+		explode thingy1 type FALL | BITMAP1;
+		explode thingy2 type FALL | BITMAP1;
+		explode thingy3 type FALL | BITMAP1;
+		explode thingy4 type FALL | BITMAP1;
+		explode thingy5 type FALL | BITMAP1;
+		explode thingy6 type FALL | BITMAP1;
+		explode thingy7 type FALL | BITMAP1;
+		explode thingy8 type FALL | BITMAP1;
+		explode thingy9 type FALL | BITMAP1;
+		explode thingy10 type FALL | BITMAP1;
+		explode thingy11 type FALL | BITMAP1;
+		explode thingy12 type FALL | BITMAP1;	
+	
+	return 2;
+}

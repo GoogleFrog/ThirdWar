@@ -1,0 +1,68 @@
+piece gp, base, turret, dish;
+
+static-var randomanim, randlook;
+
+
+#define SMOKEPIECE1 base
+
+#include "/headers/smoke.h";
+
+	
+
+jitter()
+{
+	sleep 600;
+	
+	if ( randomanim == 1)
+		{	turn turret		to y-axis randlook			speed (<10>+randlook);	}
+		
+	if ( randomanim == 4)
+		{	turn dish		to x-axis <-0>				speed <105>;	}
+
+	sleep 600;
+		
+	if ( randomanim == 2)
+		{	turn turret		to y-axis (<0>-randlook)	speed (<10>+randlook);	}
+		
+	if ( randomanim == 3)
+		{	turn dish		to x-axis (<0>-randlook/2)			speed <305>;		}
+		
+	sleep 600;
+	
+	turn turret	to y-axis <0>		speed (<10>+randlook);
+}
+
+
+MotionControl()
+	{	
+		while (1)
+		{
+		randomanim = Rand( 1, 6 );
+		randlook = Rand( <10>, <180> );
+		//ugly workaround to peculiar bug in spring 
+		sleep 10;  
+		CALL-SCRIPT jitter();
+		}
+	} 
+
+//------------------------------------------------------
+//start ups :)
+//------------------------------------------------------
+Create()
+	{
+	start-script MotionControl();
+	}
+	
+SweetSpot(piecenum)
+	{	piecenum=base;	}	
+	
+
+
+Killed( severity, corpsetype )
+	{
+		explode base		type	FALL | SMOKE | EXPLODE_ON_HIT;
+		explode turret		type	FALL | SMOKE | EXPLODE_ON_HIT;
+		explode dish 		type	FALL | SMOKE | EXPLODE_ON_HIT;
+
+	return( 0 );
+	}

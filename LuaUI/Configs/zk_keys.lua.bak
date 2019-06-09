@@ -1,0 +1,684 @@
+
+return {
+	date = 20130630,
+	keybinds = {
+		[1] = {
+			[1] = "togglecammode",
+			[2] = "Ctrl+backspace",
+		},
+		[2] = {
+			[1] = "togglecammode",
+			[2] = "Shift+backspace",
+		},
+		[3] = {
+			[1] = "edit_backspace",
+			[2] = "Any+backspace",
+		},
+		[4] = {
+			[1] = "toggleoverview",
+			[2] = "Ctrl+tab",
+		},
+		[5] = {
+			[1] = "edit_complete",
+			[2] = "Any+tab",
+		},
+		[6] = {
+			[1] = "chatally",
+			[2] = {
+				[1] = "Alt+enter",
+				[2] = "Alt+numpad_enter",
+			},
+		},
+		[7] = {
+			[1] = "chatswitchally",
+			[2] = {
+				[1] = "Alt+enter",
+				[2] = "Alt+numpad_enter",
+			},
+		},
+		[8] = {
+			[1] = "chatall",
+			[2] = {
+				[1] = "Ctrl+enter",
+				[2] = "Ctrl+numpad_enter",
+			},
+		},
+		[9] = {
+			[1] = "chatswitchall",
+			[2] = {
+				[1] = "Ctrl+enter",
+				[2] = "Ctrl+numpad_enter",
+			},
+		},
+		[10] = {
+			[1] = "chatspec",
+			[2] = "None",
+		},
+		[11] = {
+			[1] = "chatswitchspec",
+			[2] = "None",
+		},
+		[12] = {
+			[1] = "chat",
+			[2] = {
+				[1] = "Any+enter",
+				[2] = "Any+numpad_enter",
+			},
+		},
+		[13] = {
+			[1] = "edit_return",
+			[2] = {
+				[1] = "Any+enter",
+				[2] = "Any+numpad_enter",
+			},
+		},
+		[14] = {
+			[1] = "pause",
+			[2] = "pause",
+		},
+		[15] = {
+			[1] = "crudemenu",
+			[2] = "esc",
+		},
+		[16] = {
+			[1] = "exitwindow",
+			[2] = "shift+esc",
+		},
+		[17] = {
+			[1] = "quitforce",
+			[2] = "Ctrl+Shift+esc",
+		},
+		[18] = {
+			[1] = "edit_escape",
+			[2] = "Any+escape",
+		},
+		[19] = {
+			[1] = "speedup",
+			[2] = {
+				[1] = "Any++",
+				[2] = "Any+=",
+				[3] = "Any+numpad+",
+			},
+		},
+		[20] = {
+			[1] = "prevmenu",
+			[2] = ",",
+		},
+		[21] = {
+			[1] = "decguiopacity",
+			[2] = "Shift+,",
+		},
+		[22] = {
+			[1] = "slowdown",
+			[2] = {
+				[1] = "Any+-",
+				[2] = "Any+numpad-",
+			},
+		},
+		[23] = {
+			[1] = "nextmenu",
+			[2] = ".",
+		},
+		[24] = {
+			[1] = "incguiopacity",
+			[2] = "Shift+.",
+		},
+		[25] = {
+			[1] = "specteam 9",
+			[2] = "0",
+		},
+		[26] = {
+			[1] = "specteam 19",
+			[2] = "Ctrl+0",
+		},
+		[27] = {
+			[1] = "group0",
+			[2] = "Any+0",
+		},
+		[28] = {
+			[1] = "specteam 0",
+			[2] = "1",
+		},
+		[29] = {
+			[1] = "specteam 10",
+			[2] = "Ctrl+1",
+		},
+		[30] = {
+			[1] = "group1",
+			[2] = "Any+1",
+		},
+		[31] = {
+			[1] = "specteam 1",
+			[2] = "2",
+		},
+		[32] = {
+			[1] = "specteam 11",
+			[2] = "Ctrl+2",
+		},
+		[33] = {
+			[1] = "group2",
+			[2] = "Any+2",
+		},
+		[34] = {
+			[1] = "specteam 2",
+			[2] = "3",
+		},
+		[35] = {
+			[1] = "specteam 12",
+			[2] = "Ctrl+3",
+		},
+		[36] = {
+			[1] = "group3",
+			[2] = "Any+3",
+		},
+		[37] = {
+			[1] = "specteam 3",
+			[2] = "4",
+		},
+		[38] = {
+			[1] = "specteam 13",
+			[2] = "Ctrl+4",
+		},
+		[39] = {
+			[1] = "group4",
+			[2] = "Any+4",
+		},
+		[40] = {
+			[1] = "specteam 4",
+			[2] = "5",
+		},
+		[41] = {
+			[1] = "specteam 14",
+			[2] = "Ctrl+5",
+		},
+		[42] = {
+			[1] = "group5",
+			[2] = "Any+5",
+		},
+		[43] = {
+			[1] = "specteam 5",
+			[2] = "6",
+		},
+		[44] = {
+			[1] = "specteam 15",
+			[2] = "Ctrl+6",
+		},
+		[45] = {
+			[1] = "group6",
+			[2] = "Any+6",
+		},
+		[46] = {
+			[1] = "specteam 6",
+			[2] = "7",
+		},
+		[47] = {
+			[1] = "specteam 16",
+			[2] = "Ctrl+7",
+		},
+		[48] = {
+			[1] = "group7",
+			[2] = "Any+7",
+		},
+		[49] = {
+			[1] = "specteam 7",
+			[2] = "8",
+		},
+		[50] = {
+			[1] = "specteam 17",
+			[2] = "Ctrl+8",
+		},
+		[51] = {
+			[1] = "group8",
+			[2] = "Any+8",
+		},
+		[52] = {
+			[1] = "specteam 8",
+			[2] = "9",
+		},
+		[53] = {
+			[1] = "specteam 18",
+			[2] = "Ctrl+9",
+		},
+		[54] = {
+			[1] = "group9",
+			[2] = "Any+9",
+		},
+		[55] = {
+			[1] = "buildfacing inc",
+			[2] = {
+				[1] = "Any+insert",
+				[2] = "[",
+				[3] = "Shift+[",
+			},
+		},
+		[56] = {
+			[1] = "drawinmap",
+			[2] = {
+				[1] = "Any+\\",
+				[2] = "Any+`",
+				[3] = "Any+0xa7",
+				[4] = "Any+^",
+			},
+		},
+		[57] = {
+			[1] = "clearmapmarks",
+			[2] = "Alt+`",
+		},
+		[58] = {
+			[1] = "buildfacing dec",
+			[2] = {
+				[1] = "Any+delete",
+				[2] = "]",
+				[3] = "Shift+]",
+			},
+		},
+		[59] = {
+			[1] = "attack",
+			[2] = "f",
+		},
+		[60] = {
+			[1] = "areaattack",
+			[2] = "Alt+a",
+		},
+		[61] = {
+			[1] = "debug",
+			[2] = "Alt+n",
+		},
+		[62] = {
+			[1] = "debugcolvol",
+			[2] = "Alt+b",
+		},
+		[63] = {
+			[1] = "repeat",
+			[2] = "ctrl+r",
+		},
+		[64] = {
+			[1] = "priority",
+			[2] = "ctrl+q",
+		},
+		[65] = {
+			[1] = "selfd",
+			[2] = "C+d",
+		},
+		[66] = {
+			[1] = "selectcomm",
+			[2] = "ctrl+c",
+		},
+		[67] = {
+			[1] = "manualfire",
+			[2] = "d",
+		},
+		[68] = {
+			[1] = "oneclickwep",
+			[2] = "d",
+		},
+		[69] = {
+			[1] = "placebeacon",
+			[2] = "d",
+		},
+		[70] = {
+			[1] = "reclaim",
+			[2] = "e",
+		},
+		[71] = {
+			[1] = "fight",
+			[2] = "a",
+		},
+		[72] = {
+			[1] = "forcestart",
+			[2] = "Alt+f",
+		},
+		[73] = {
+			[1] = "areaguard",
+			[2] = "g",
+		},
+		[74] = {
+			[1] = "gameinfo",
+			[2] = "Ctrl+i",
+		},
+		[75] = {
+			[1] = "wantcloak",
+			[2] = "k",
+		},
+		[76] = {
+			[1] = "togglelos",
+			[2] = "Ctrl+l",
+		},
+		[77] = {
+			[1] = "loadunits",
+			[2] = "l",
+		},
+		[78] = {
+			[1] = "loadselected",
+			[2] = "l",
+		},
+		[79] = {
+			[1] = "rawmove",
+			[2] = "m",
+		},
+		[80] = {
+			[1] = "singlestep",
+			[2] = "Alt+o",
+		},
+		[81] = {
+			[1] = "patrol",
+			[2] = "p",
+		},
+		[82] = {
+			[1] = "groupclear",
+			[2] = "Shift+q",
+		},
+		[83] = {
+			[1] = "repair",
+			[2] = "r",
+		},
+		[84] = {
+			[1] = "stop",
+			[2] = "s",
+		},
+		[85] = {
+			[1] = "stopproduction",
+			[2] = "ctrl+s",
+		},
+		[86] = {
+			[1] = "globalbuildcancel",
+			[2] = "alt+s",
+		},
+		[87] = {
+			[1] = "unloadunits",
+			[2] = "u",
+		},
+		[88] = {
+			[1] = "pastetext",
+			[2] = "Ctrl+v",
+		},
+		[89] = {
+			[1] = "wait",
+			[2] = "ctrl+w",
+		},
+		[90] = {
+			[1] = "areamex",
+			[2] = "w",
+		},
+		[91] = {
+			[1] = "onoff",
+			[2] = "o",
+		},
+		[92] = {
+			[1] = "pushpull",
+			[2] = "o",
+		},
+		[93] = {
+			[1] = "buildspacing dec",
+			[2] = "Any+x",
+		},
+		[94] = {
+			[1] = "buildspacing inc",
+			[2] = "Any+z",
+		},
+		[95] = {
+			[1] = "edit_delete",
+			[2] = "Any+delete",
+		},
+		[96] = {
+			[1] = "edit_prev_line",
+			[2] = "Any+up",
+		},
+		[97] = {
+			[1] = "moveforward",
+			[2] = "Any+up",
+		},
+		[98] = {
+			[1] = "edit_next_line",
+			[2] = "Any+down",
+		},
+		[99] = {
+			[1] = "moveback",
+			[2] = "Any+down",
+		},
+		[100] = {
+			[1] = "edit_end",
+			[2] = "Alt+right",
+		},
+		[101] = {
+			[1] = "edit_next_word",
+			[2] = "Ctrl+right",
+		},
+		[102] = {
+			[1] = "edit_next_char",
+			[2] = "Any+right",
+		},
+		[103] = {
+			[1] = "moveright",
+			[2] = "Any+right",
+		},
+		[104] = {
+			[1] = "edit_home",
+			[2] = "Alt+left",
+		},
+		[105] = {
+			[1] = "edit_prev_word",
+			[2] = "Ctrl+left",
+		},
+		[106] = {
+			[1] = "edit_prev_char",
+			[2] = "Any+left",
+		},
+		[107] = {
+			[1] = "moveleft",
+			[2] = "Any+left",
+		},
+		[108] = {
+			[1] = "increaseviewradius",
+			[2] = "home",
+		},
+		[109] = {
+			[1] = "edit_home",
+			[2] = "Any+home",
+		},
+		[110] = {
+			[1] = "decreaseviewradius",
+			[2] = "end",
+		},
+		[111] = {
+			[1] = "edit_end",
+			[2] = "Any+end",
+		},
+		[112] = {
+			[1] = "moveup",
+			[2] = "Any+pageup",
+		},
+		[113] = {
+			[1] = "movedown",
+			[2] = "Any+pagedown",
+		},
+		[114] = {
+			[1] = "showelevation",
+			[2] = "f1",
+		},
+		[115] = {
+			[1] = "togglestatsgraph",
+			[2] = "A+f1",
+		},
+		[116] = {
+			[1] = "showpathtraversability",
+			[2] = "f2",
+		},
+		[117] = {
+			[1] = "lastmsgpos",
+			[2] = "f3",
+		},
+		[118] = {
+			[1] = "showeco",
+			[2] = "f4",
+		},
+		[119] = {
+			[1] = "showmetalmap",
+			[2] = "None",
+		},
+		[120] = {
+			[1] = "hideinterfaceandcursor",
+			[2] = "ctrl+f5",
+		},
+		[121] = {
+			[1] = "NoSound",
+			[2] = "Any+f6",
+		},
+		[122] = {
+			[1] = "DynamicSky",
+			[2] = "Any+f7",
+		},
+		[123] = {
+			[1] = "savegame",
+			[2] = "Ctrl+Shift+f8",
+		},
+		[124] = {
+			[1] = "luaui showhealthbars",
+			[2] = "alt+f9",
+		},
+		[125] = {
+			[1] = "showhealthbars",
+			[2] = "alt+f9",
+		},
+		[126] = {
+			[1] = "createvideo",
+			[2] = "Ctrl+Shift+f10",
+		},
+		[127] = {
+			[1] = "viewlobby",
+			[2] = "f11",
+		},
+		[128] = {
+			[1] = "luaui tweakgui",
+			[2] = "C+f11",
+		},
+		[129] = {
+			[1] = "epic_chili_widget_selector_widgetlist_2",
+			[2] = "alt+f11",
+		},
+		[130] = {
+			[1] = "screenshot png",
+			[2] = "f12",
+		},
+		[131] = {
+			[1] = "screenshot jpg",
+			[2] = "ctrl+f12",
+		},
+		[132] = {
+			[1] = "settargetcircle",
+			[2] = "t",
+		},
+		[133] = {
+			[1] = "resurrect",
+			[2] = "t",
+		},
+		[134] = {
+			[1] = "jump",
+			[2] = "j",
+		},
+		[135] = {
+			[1] = "select AllMap++_ClearSelection_SelectAll+",
+			[2] = "ctrl+a",
+		},
+		[136] = {
+			[1] = "selectidlecon_all",
+			[2] = "ctrl+b",
+		},
+		[137] = {
+			[1] = "select PrevSelection+_Not_RelativeHealth_30+_ClearSelection_SelectAll+",
+			[2] = "ctrl+e",
+		},
+		[138] = {
+			[1] = "select AllMap+_Not_Builder_Not_Building+_ClearSelection_SelectAll+",
+			[2] = "ctrl+f",
+		},
+		[139] = {
+			[1] = "select AllMap+_NameContain_Raptor+_ClearSelection_SelectAll+",
+			[2] = "ctrl+g",
+		},
+		[140] = {
+			[1] = "select PrevSelection+_Idle+_ClearSelection_SelectAll+",
+			[2] = "ctrl+i",
+		},
+		[141] = {
+			[1] = "select AllMap+_Not_Builder_Not_Building_Not_Transport_Aircraft_Radar+_ClearSelection_SelectAll+",
+			[2] = "ctrl+s",
+		},
+		[142] = {
+			[1] = "select AllMap+_Not_Builder_Not_Building_Transport_Aircraft+_ClearSelection_SelectAll+",
+			[2] = "ctrl+t",
+		},
+		[143] = {
+			[1] = "selectidlecon",
+			[2] = "z",
+		},
+		[144] = {
+			[1] = "select Visible+_InPrevSel+_ClearSelection_SelectAll+",
+			[2] = "ctrl+x",
+		},
+		[145] = {
+			[1] = "select AllMap+_InPrevSel+_ClearSelection_SelectAll+",
+			[2] = "ctrl+z",
+		},
+		[146] = {
+			[1] = "epic_chili_integral_menu_tab_economy",
+			[2] = "any+x",
+		},
+		[147] = {
+			[1] = "epic_chili_integral_menu_tab_defence",
+			[2] = "any+c",
+		},
+		[148] = {
+			[1] = "epic_chili_integral_menu_tab_special",
+			[2] = "any+v",
+		},
+		[149] = {
+			[1] = "epic_chili_integral_menu_tab_factory",
+			[2] = "any+b",
+		},
+		[150] = {
+			[1] = "epic_chili_integral_menu_tab_units",
+			[2] = "any+n",
+		},
+		[151] = {
+			[1] = "exitwindow",
+			[2] = "s+escape",
+		},
+		[152] = {
+			[1] = "crudesubmenu",
+			[2] = "f10",
+		},
+		[153] = {
+			[1] = "epic_chili_pro_console_enableconsole",
+			[2] = "f8",
+		},
+		[154] = {
+			[1] = "epic_chili_share_menu_v1.22_sharemenu",
+			[2] = "tab",
+		},
+		[155] = {
+			[1] = "epic_chili_core_selector_select_factory_1",
+			[2] = "alt+Q",
+		},
+		[156] = {
+			[1] = "epic_chili_core_selector_select_factory_2",
+			[2] = "alt+W",
+		},
+		[157] = {
+			[1] = "epic_chili_core_selector_select_factory_3",
+			[2] = "alt+E",
+		},
+		[158] = {
+			[1] = "epic_chili_core_selector_select_factory_4",
+			[2] = "alt+R",
+		},
+		[159] = {
+			[1] = "epic_chili_core_selector_select_factory_5",
+			[2] = "alt+T",
+		},
+		[160] = {
+			[1] = "epic_chili_share_menu_v1.24_sharemenu",
+			[2] = "tab",
+		},
+	},
+}

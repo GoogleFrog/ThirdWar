@@ -1,0 +1,80 @@
+unitDef = {
+  unitname                      = [[energygeo]],
+  name                          = [[Geothermal Generator]],
+  description                   = [[Medium Powerplant (+25)]],
+  acceleration                  = 0,
+  activateWhenBuilt             = true,
+  brakeRate                     = 0,
+  buildCostMetal                = 500,
+  builder                       = false,
+  buildingGroundDecalDecaySpeed = 30,
+  buildingGroundDecalSizeX      = 7,
+  buildingGroundDecalSizeY      = 7,
+  buildingGroundDecalType       = [[energygeo_aoplane.dds]],
+  buildPic                      = [[energygeo.png]],
+  category                      = [[SINK UNARMED]],
+  collisionVolumeOffsets        = [[0 0 0]],
+  collisionVolumeScales         = [[84 84 84]],
+  collisionVolumeType           = [[ellipsoid]],
+  corpse                        = [[DEAD]],
+  
+
+  customParams                  = {
+    pylonrange = 60,
+    aimposoffset   = [[0 0 0]],
+    midposoffset   = [[0 -10 0]],
+    modelradius    = [[42]],
+	removewait     = 1,
+    
+    morphto = [[energyheavygeo]],
+    morphtime = [[90]],
+	
+	priority_misc = 1, -- Medium
+	default_spacing = 0,
+  },
+
+  energyMake                    = 50,
+  energyUse                     = 0,
+  explodeAs                     = [[ESTOR_BUILDING]],
+  footprintX                    = 5,
+  footprintZ                    = 5,
+  iconType                      = [[energygeo]],
+  idleAutoHeal                  = 5,
+  idleTime                      = 1800,
+  maxDamage                     = 1750,
+  maxSlope                      = 18,
+  maxVelocity                   = 0,
+  minCloakDistance              = 150,
+  noAutoFire                    = false,
+  objectName                    = [[geo.dae]],
+  script                        = [[energygeo.lua]],
+  selfDestructAs                = [[ESTOR_BUILDING]],
+  sightDistance                 = 273,
+  turnRate                      = 0,
+  useBuildingGroundDecal        = true,
+  workerTime                    = 0,
+  yardMap                       = [[ooooo ogggo ogggo ogggo ooooo]],
+
+  featureDefs                   = {
+
+    DEAD  = {
+      blocking         = true,
+      featureDead      = [[HEAP]],
+      footprintX       = 4,
+      footprintZ       = 4,
+      object           = [[geo_dead.dae]],
+    },
+
+
+    HEAP  = {
+      blocking         = false,
+      footprintX       = 4,
+      footprintZ       = 4,
+      object           = [[debris4x4a.s3o]],
+    },
+
+  },
+
+}
+
+return lowerkeys({ energygeo = unitDef })

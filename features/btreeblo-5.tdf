@@ -1,0 +1,24 @@
+[btreeblo-5] 
+	   { 
+	   world=All Worlds; 
+	   description=Elm Tree5; 
+	   category=Vegetation; 
+	   object=btreeblo-5.s3o; 
+		collisionvolumeoffsets = 0 0 0;
+		collisionvolumescales = 10 40 10;
+		collisionvolumetype = Box;
+	   footprintx=3; 
+	   footprintz=3; 
+	   height=40;
+	   blocking=1;
+	   upright=1; 
+	   hitdensity=5000; 
+	   energy=250;
+	   metal=0; 
+	   damage=1100; 
+	   flammable=1; 
+	   reclaimable=1; 
+	   autoreclaimable=1; 
+	   featurereclamate=smudge01; 
+	   seqnamereclamate=tree1reclamate; 
+	  } 

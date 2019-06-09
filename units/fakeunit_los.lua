@@ -1,0 +1,47 @@
+unitDef = {
+  unitname              = [[fakeunit_los]],
+  name                  = [[LOS Provider]],
+  description           = [[Knows all and sees all]],
+  acceleration          = 1,
+  brakeRate             = 0.8,
+  buildCostEnergy       = 0.45,
+  buildCostMetal        = 0.45,
+  builder               = false,
+  buildPic              = [[levelterra.png]],
+  buildTime             = 0.45,
+  canFly                = true,
+  canGuard              = true,
+  canMove               = true,
+  canPatrol             = true,
+  canSubmerge           = false,
+  canSelfDestruct       = false,
+  category              = [[FAKEUNIT]],
+  cruiseAlt             = 300,
+  
+  customParams          = {
+      dontcount = [[1]],
+      completely_hidden = 1, -- for widget-senpai not to notice me
+  },
+  
+  floater               = true,
+  footprintX            = 3,
+  footprintZ            = 3,
+  hoverAttack           = true,
+  iconType              = [[none]],
+  idleAutoHeal          = 10,
+  idleTime              = 300,
+  levelGround           = false,
+  maxDamage             = 900000,
+  maxVelocity           = 5,
+  maxWaterDepth         = 0,
+  minCloakDistance      = 9,
+  noAutoFire            = false,
+  objectName            = [[debris1x1b.s3o]],
+  script                = [[fakeunit_los.lua]],
+  sightDistance         = 500,
+  stealth               = true,
+  turnRate              = 0,
+  workerTime            = 0,
+}
+
+return lowerkeys({ fakeunit_los = unitDef })
